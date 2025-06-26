@@ -1,0 +1,10 @@
+<template>
+    <lightning-button 
+        label="Process Skipped Records" 
+        onclick={handleProcess} 
+        disabled={isProcessing}
+    ></lightning-button>
+    <template if:true={isProcessing}>
+        <lightning-spinner alternative-text="Processing..."></lightning-spinner>
+    </template>
+</template>
