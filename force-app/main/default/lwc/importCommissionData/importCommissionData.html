@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-card variant="Narrow" icon-name="standard:file" title="Import Commission Data From Vendor">
+            <template if:true={isLoaded}>
+                <lightning-spinner alternative-text="Processing..." size="large"></lightning-spinner>
+            </template>
+            <template if:true={showFileUpload}>
+                <div class="slds-var-p-horizontal_small slds-m-top_medium">
+                    <lightning-file-upload 
+                        accept={acceptedFormats} 
+                        label="Attach CSV File" 
+                        name="fileUploader"
+                        record-id={recordId}
+                        onuploadfinished={handleFileUpload}>
+                    </lightning-file-upload>
+                </div>
+            </template>
+            
+        </lightning-card>
+    </div>
+</template>

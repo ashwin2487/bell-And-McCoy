@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Commission CSV Import">
+        <div class="slds-p-around_medium">
+            <template if:true={isLoaded}>
+                <lightning-spinner size="medium" alternative-text="Processing..."></lightning-spinner>
+                <p>Uploading chunks... {completedChunks} / {totalChunks}</p>
+                <lightning-progress-bar value={progressPercent} size="large"></lightning-progress-bar>
+            </template>
+
+            <template if:true={showFileUpload}>
+                <lightning-input type="file" accept=".csv" label="Upload CSV File" onchange={handleFileChange}></lightning-input>
+            </template>
+        </div>
+    </lightning-card>
+</template>

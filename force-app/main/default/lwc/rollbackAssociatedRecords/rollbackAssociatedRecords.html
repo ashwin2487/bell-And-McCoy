@@ -1,0 +1,10 @@
+<template>
+    <lightning-button 
+        label="Roll back Transaction" 
+        onclick={handleRollBack} 
+        disabled={isProcessing}
+    ></lightning-button>
+    <template if:true={isProcessing}>
+        <lightning-spinner alternative-text="Processing..."></lightning-spinner>
+    </template>
+</template>
