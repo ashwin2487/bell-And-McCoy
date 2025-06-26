@@ -1,8 +1,6 @@
 import { LightningElement, track, api } from 'lwc';
 import { loadScript } from 'lightning/platformResourceLoader';
 import PapaParse from '@salesforce/resourceUrl/PapaParse';
-
-import insertCommissionData from '@salesforce/apex/CommissionImportProcess.insertCommissionData';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class ImportCommissionData extends LightningElement {

@@ -2,13 +2,40 @@
     <lightning-card title="Dealer CSV Import">
         <div class="slds-p-around_medium">
             <template if:true={isLoaded}>
-                <lightning-spinner size="medium" alternative-text="Processing..."></lightning-spinner>
-                <p>Uploading chunks... {completedChunks} / {totalChunks}</p>
-                <lightning-progress-bar value={progressPercent} size="large"></lightning-progress-bar>
+                <div class="upload-processing-container">
+                    <div class="circular-progress-wrapper">
+                        <svg class="circular-progress-svg" viewBox="0 0 100 100">
+                            <circle class="circular-progress-background" cx="50" cy="50" r="40"></circle>
+                            <circle class="circular-progress-arc" cx="50" cy="50" r="40" style={circularProgressStyle}>
+                            </circle>
+                        </svg>
+                        <div class="progress-content">
+                            <span class="progress-percent">{progressPercent}%</span>
+                            <div class="upload-icon-processing">
+                                <lightning-icon icon-name="utility:upload" size="small"></lightning-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="processing-text">Processing file 1 of 1: Extracting data from {fileName}...</p>
+                    <div class="slds-m-top_medium">
+                        <lightning-progress-bar value={progressPercent} size="large"></lightning-progress-bar>
+                    </div>
+                </div>
             </template>
 
             <template if:true={showFileUpload}>
-                <lightning-input type="file" accept=".csv" label="Upload CSV File" onchange={handleFileChange}></lightning-input>
+                <div class="file-upload-area" ondrop={handleDrop} ondragover={handleDragOver}>
+                    <div class="upload-icon-drag-drop">
+                        <lightning-icon icon-name="utility:upload" size="large"></lightning-icon>
+                    </div>
+                    <p class="drop-text">Drag and Drop here</p>
+                    <p class="or-text">or</p>
+                    <div class="upload-button-container">
+                        <lightning-button label="Browse Files" onclick={handleBrowseClick}></lightning-button>
+                        <input type="file" accept=".csv" class="slds-hide" onchange={handleFileChange}
+                            data-id="fileInput" />
+                    </div>
+                </div>
             </template>
         </div>
     </lightning-card>

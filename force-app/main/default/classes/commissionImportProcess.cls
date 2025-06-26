@@ -43,8 +43,7 @@ public without sharing class CommissionImportProcess{
         }
         
         if (insertedCount > 0) {
-            importRecord.Total_File_Lines__c = 
-                (importRecord.Total_File_Lines__c == null ? 0 : importRecord.Total_File_Lines__c) + insertedCount;
+            importRecord.Total_File_Lines__c = (importRecord.Total_File_Lines__c == null ? 0 : importRecord.Total_File_Lines__c) + insertedCount;
             
             update importRecord;
         }
