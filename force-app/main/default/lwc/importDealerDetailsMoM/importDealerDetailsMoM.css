@@ -1,0 +1,120 @@
+.file-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #c9c9c9; /* Lighter dashed border */
+    border-radius: 8px;
+    padding: 50px 20px; /* More vertical padding for space */
+    text-align: center;
+    background-color: #fcfcfc; /* Slightly off-white background */
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+ 
+.file-upload-area:hover {
+    border-color: #0070d2; /* Salesforce Blue on hover */
+    background-color: #f0f8ff; /* Light blue tint on hover */
+}
+ 
+.upload-icon-drag-drop {
+    margin-bottom: 20px; /* More space below icon */
+}
+ 
+.upload-icon-drag-drop lightning-icon {
+    --sds-c-icon-color-foreground: #a0a0a0; /* Grey icon color */
+}
+ 
+ 
+.drop-text {
+    font-size: 1.3em; /* Slightly larger text */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px; /* Space between text elements */
+}
+ 
+.or-text {
+    color: #888;
+    font-size: 0.9em; /* Smaller "or" text */
+    margin: 15px 0; /* More vertical space around "or" */
+}
+ 
+.upload-button-container lightning-button {
+    --sds-c-button-color-background: #0070d2; /* Salesforce blue button */
+    --sds-c-button-color-background-hover: #005fb2;
+    border-radius: 4px; /* Slightly rounded button */
+}
+ 
+/* --- Processing State Styles --- */
+.upload-processing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0; /* Adjust padding */
+}
+ 
+.circular-progress-wrapper {
+    position: relative;
+    width: 100px; /* Diameter of the circle */
+    height: 100px; /* Diameter of the circle */
+    margin-bottom: 30px; /* Space below the circle */
+}
+ 
+.circular-progress-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start the arc from the top */
+    overflow: visible; /* Ensure stroke cap is visible if using round */
+}
+ 
+.circular-progress-background {
+    fill: none;
+    stroke: #e0e0e0; /* Grey background circle */
+    stroke-width: 8; /* Thickness of the circle */
+}
+ 
+.circular-progress-arc {
+    fill: none;
+    stroke: #0070d2; /* Salesforce blue for the progress arc */
+    stroke-width: 8; /* Thickness of the arc */
+    stroke-linecap: round; /* Rounded ends for the arc */
+}
+ 
+.progress-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0070d2; /* Color for percentage */
+}
+ 
+.progress-percent {
+    font-size: 1.8em; /* Larger percentage font */
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between percent and icon */
+}
+ 
+.upload-icon-processing lightning-icon {
+    --sds-c-icon-color-foreground: #0070d2; /* Blue icon in processing state */
+}
+ 
+.processing-text {
+    font-size: 1.1em;
+    color: #555; /* Darker grey for text */
+    margin-top: 15px; /* Space above text */
+    text-align: center;
+    font-weight: 500; /* Slightly bolder */
+}
+ 
+/* Linear progress bar adjustments */
+.slds-m-top_medium lightning-progress-bar {
+    --sds-c-progress-bar-color-background: #e0e0e0; /* Background of linear bar */
+    --sds-c-progress-bar-color-fill: #0070d2; /* Fill color of linear bar */
+    height: 8px; /* Thinner linear bar */
+    border-radius: 4px; /* Rounded linear bar ends */
+}
